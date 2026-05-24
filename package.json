@@ -1,0 +1,20 @@
+{
+  "name": "playwright-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation tests for web and API scenarios.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:report": "npx playwright show-report",
+    "lint": "npx eslint . --ext .ts"
+  },
+  "keywords": ["playwright", "automation", "typescript", "testing"],
+  "author": "Annie Cherian",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.9.1",
+    "dotenv": "^16.4.1"
+  }
+}
