@@ -10,17 +10,14 @@ This repository contains Playwright automation tests for web and API scenarios.
 npm install
 ```
 
-2. Ensure any required environment values are available. For example:
+2. For local development, create a `.env` file with your credentials:
 
-```bash
-export APIKEY=your_api_key_here
+```
+AUTHORIZATION = 'your_authorization_token'
+APIKEY = 'your_api_key'
 ```
 
-On Windows PowerShell:
-
-```powershell
-$env:APIKEY = 'your_api_key_here'
-```
+**Note:** Add `.env` to `.gitignore` to keep credentials private.
 
 ## Available scripts
 
@@ -33,10 +30,21 @@ $env:APIKEY = 'your_api_key_here'
 - `tests/` — Playwright test suites
 - `playwright.config.ts` — Playwright configuration
 - `tsconfig.json` — TypeScript compiler settings
-- `.github/workflows/ci.yml` — GitHub Actions CI pipeline
+- `.github/workflows/playwright.yml` — GitHub Actions CI pipeline
 
 ## GitHub Actions
 
-A sample pipeline is configured in `.github/workflows/ci.yml`.
+A CI pipeline is configured in `.github/workflows/playwright.yml`.
 
-It runs on pushes and pull requests to `main` and `master`, installs dependencies, executes `npm test`, and uploads the Playwright report on failure.
+It runs on pushes and pull requests to `main` and `master`, installs dependencies, and executes the Playwright tests. The Playwright HTML report is uploaded as an artifact on each run.
+
+### Secrets
+
+To use API credentials in GitHub Actions, configure repository secrets:
+
+1. Go to your repo → **Settings** → **Secrets and variables** → **Actions**
+2. Click **New repository secret** and add:
+   - `AUTHORIZATION`: Your authorization token
+   - `APIKEY`: Your API key
+
+These secrets are inserted as environment variables during the workflow.
