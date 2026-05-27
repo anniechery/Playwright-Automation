@@ -47,7 +47,7 @@ test('Validate New Fuel Prices', async ({ request }) => {
       const endTime = Date.now();
       const responseTime = endTime - startTime;
       const body = await response.json();
-      //console.log('Response Body:', body);
+      console.log('Response Body:', body);
       console.log(`API Response Time for ${apiUrl}: ${responseTime} ms`);
       expect(response.status()).toBe(expectedStatus); //Response status should match the expected status from the test data
       expect(responseTime).toBeLessThan(2000); // Response time should be less than 2000 ms
