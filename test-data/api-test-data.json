@@ -1,7 +1,7 @@
 [
         {
             "apiURL": "https://api.onegov.nsw.gov.au/FuelPriceCheck/v2/fuel/prices/new",
-             "status": 404
+             "status": 200
         },
         {
            "apiURL": "https://api.onegov.nsw.gov.au/FuelPriceCheck/v2/fuel/prices/station/2",
